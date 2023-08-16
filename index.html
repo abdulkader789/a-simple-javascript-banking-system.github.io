@@ -12,7 +12,7 @@
     
 
  <!-- navbar goes here -->
-<nav class="max-w-6xl mx-auto px-4 bg-gray-100">
+<nav class="max-w-6xl mx-auto px-4 bg-gray-100 mb-3">
     
     <div class="max-w-6xl mx-auto px-4">
       <div class="  text-center border border-b-gray-200">
@@ -34,8 +34,8 @@
   
           <!-- primary nav -->
           <div class="hidden md:flex items-center space-x-1">
-            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Your Banking</a>
-            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Banking History</a>
+            <a href="#" id="banking" class="py-5 px-3 font-bold text-blue-700 hover:text-blue-900">Your Banking</a>
+            <a href="#" id="history" class="py-5 px-3 font-bold text-blue-700 hover:text-blue-900">Banking History</a>
           </div>
         </div>
   
@@ -43,8 +43,9 @@
         <div class="hidden md:flex items-center space-x-1">
           
           <button
+       
           type="submit"
-          class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+          class="sign-in inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
         >
           Sign in
         </button>
@@ -67,7 +68,7 @@
     <div class="mobile-menu hidden md:hidden">
       <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Your Banking</a>
       <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Banking History</a>
-      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Sign in</a>
+      <a href="#"  class="sign-in block py-2 px-4 text-sm hover:bg-gray-200">Sign in</a>
 
     </div>
   </nav>
@@ -75,10 +76,10 @@
   <!-- content goes here -->
 
 
-<!-- Sign up section-->
+<!-- Sign in section-->
 
 
-<section class="max-w-6xl border border-gray-200 mx-auto bg-white flex  flex-wrap flex-col-reverse md:flex-nowrap md:flex-row   ">
+<section id="signin-section" class="max-w-6xl border border-gray-200 mx-auto bg-white  flex  flex-wrap flex-col-reverse md:flex-nowrap md:flex-row   ">
   <div class="relative h-96 w-full">
     <img
       alt="Welcome"
@@ -168,7 +169,7 @@
 
         <button
           type="submit"
-          class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+          class="sign-in inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
         >
           Sign in
         </button>
@@ -185,8 +186,8 @@
 
 
 
-<!-- horizontal card -->
-<div class=" max-w-6xl mx-auto px-4 sm:px-20  bg-orange-200 pb-10">
+<!--  banking section -->
+<div id="banking-section" class="hidden max-w-6xl mx-auto px-4 sm:px-20  bg-orange-200 pb-10">
 
   <h2 class="text-2xl font-bold text-center py-10">Welcome to your account</h2>
 
@@ -212,7 +213,7 @@
     
     <div class=" grid md:grid-cols-2 divide-x bg-blue-100 mt-5">
   
-        <div class="bg-white border-r-1 md:border-slate-600 sm:p-6 md:p-6  shadow-lg">
+        <div class="bg-white sm:mr-2   sm:p-6 md:p-6  shadow-lg">
             <div class="flex flex-wrap md:flex-nowrap sm:py-5 md:py-5 rounded-md shadow-sm">
                 <input id="d-input" class="shadow appearance-none border border-b-gray-700 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="$ Amount you want to deposit">
                 <button type="button" id="deposit-btn" class="-ml-px py-3 px-5 bg-green-500 inline-flex justify-center items-center gap-2 border font-medium  text-white shadow-sm align-middle hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white">
@@ -222,7 +223,7 @@
               </div>
           
         </div>
-        <div class="bg-white border-r-2 md:border-slate-600  sm:p-6 md:p-6  shadow-lg">
+        <div class="bg-white  sm:p-6 md:p-6  shadow-lg">
             <div class="flex flex-wrap md:flex-nowrap sm:py-5 md:py-5 rounded-md shadow-sm">
                 <input id="w-input" class="shadow appearance-none border border-b-gray-700 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="$ Amount you want to withdraw">
                 <button type="button" id="withdraw-btn" class="-ml-px py-3 px-4 bg-red-500 inline-flex justify-center items-center gap-2 border font-medium  text-white shadow-sm align-middle hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white">
@@ -240,7 +241,7 @@
 
 
 <!-- banking---history -->
-  <div id="account-history" class=" max-w-6xl mx-auto px-4 p-10 sm:min-h-fit md:min-h-fit  bg-blue-200   show-page">
+  <div id="history-section" class="hidden max-w-6xl mx-auto px-4 p-10 sm:min-h-fit md:min-h-fit  bg-blue-200   show-page">
     <h2 class="text-black text-xl font-bold text-center text-dark pb-5">Your Banking History</h2>
     <div id="statement" class="grid   sm:px-20 md:px-20 md:grid-cols-3 divide-x ">
         

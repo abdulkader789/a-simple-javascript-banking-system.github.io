@@ -1,3 +1,6 @@
+
+
+
 // grab everything we need
 const btn = document.querySelector("button.mobile-menu-button");
 const menu = document.querySelector(".mobile-menu");
@@ -9,20 +12,64 @@ btn.addEventListener("click", () => {
 
 
 
+//Check Sign in
+let isSignedin=false;
+const btn_signin=document.querySelectorAll('.sign-in');
+console.log(btn_signin)
+const btn_banking=document.getElementById('banking');
+const btn_history=document.getElementById('history');
+const signin_section=document.getElementById('signin-section');
+const banking_section=document.getElementById('banking-section');
+const history_section=document.getElementById('history-section');
 
+
+
+    btn_signin.forEach((el)=>{
+        el.addEventListener('click',()=>{
+            isSignedin=true;
+            banking_section.style.display='block';
+            signin_section.style.display='none';
+            history_section.style.display='none'
+
+        })
+    })
+
+    btn_banking.addEventListener('click',()=>{
+        if(!isSignedin){
+            alert("Plese sign in first")
+            return;
+        }
+        else{
+            banking_section.style.display='block';
+            signin_section.style.display='none';
+        }
+    })
+    btn_history.addEventListener('click',()=>{
+        if(!isSignedin){
+            alert("Plese sign in first")
+            return;
+        }
+        else{
+            banking_section.style.display='none';
+            signin_section.style.display='none';
+            history_section.style.display='block'
+        }
+    })
 
 
 
 // const bg=['#009B77','#E9897E','#EFC050','#0072B5','#091627'];
-const deposit_btn=document.getElementById('deposit-btn');
-const withdraw_btn=document.getElementById('withdraw-btn');
-const d_input=document.getElementById('d-input');
-const w_input=document.getElementById('w-input');
 // const colAll= document.querySelectorAll('.col');
 
 // colAll.forEach((element,i )=> {
 //    element.style.backgroundColor=bg[i];
 // });
+
+const deposit_btn=document.getElementById('deposit-btn');
+const withdraw_btn=document.getElementById('withdraw-btn');
+const d_input=document.getElementById('d-input');
+const w_input=document.getElementById('w-input');
+
 
 function getInput(input_field){
     let inputvalue=document.getElementById(input_field).value;
@@ -44,6 +91,7 @@ function actionButton(input,element,balance){
     let bal=getElement(balance);
     let newBal=0;
     if(!i_value){
+        alert('Input value is empty')
         return;
     }
     if(i_value>bal && element=='withdraw'){
@@ -102,9 +150,9 @@ if(el=='deposit'){
 if(el=='withdraw'){
     statement.classList.add("m-1",  "p-6", "bg-red-500")
 }
-statement.innerHTML=`<p>${date}</p>
-                    <p>Your ${el}: $ ${inputed}</p>
-                    <p>Your balance: $ ${bal}</p>
+statement.innerHTML=`<p class="text-white">${date}</p>
+                    <p class="text-white">Your ${el}: $ ${inputed}</p>
+                    <p class="text-white">Your balance: $ ${bal}</p>
 `
 document.getElementById('statement').appendChild(statement);
 }
