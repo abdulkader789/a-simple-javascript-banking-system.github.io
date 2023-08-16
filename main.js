@@ -95,11 +95,12 @@ withdraw_btn.addEventListener('click',()=>{
 function history(el,inputed,bal){
 const date=dateTime();
 const statement=document.createElement('div');
+
 if(el=='deposit'){
-    statement.classList.add('state','depo-bg')
+    statement.classList.add("m-1",  "p-6", "bg-green-500" )
 }
 if(el=='withdraw'){
-    statement.classList.add('state','with-bg')
+    statement.classList.add("m-1",  "p-6", "bg-red-500")
 }
 statement.innerHTML=`<p>${date}</p>
                     <p>Your ${el}: $ ${inputed}</p>
