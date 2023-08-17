@@ -28,9 +28,9 @@ const history_section=document.getElementById('history-section');
         console.log(el)
         el.addEventListener('click',()=>{
             isSignedin=true;
-            
-            signin_section.style.display='none';
             banking_section.style.display='block';
+            history_section.style.display='none'
+            signin_section.style.display='none';
 
         })
     })
