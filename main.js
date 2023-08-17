@@ -43,6 +43,7 @@ const history_section=document.getElementById('history-section');
         else{
             banking_section.style.display='block';
             signin_section.style.display='none';
+            history_section.style.display='none'
         }
     })
     btn_history.addEventListener('click',()=>{
