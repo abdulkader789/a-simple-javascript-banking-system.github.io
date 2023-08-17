@@ -25,11 +25,12 @@ const history_section=document.getElementById('history-section');
 
 
     btn_signin.forEach((el)=>{
+        console.log(el)
         el.addEventListener('click',()=>{
             isSignedin=true;
-            banking_section.style.display='block';
+            
             signin_section.style.display='none';
-            history_section.style.display='none'
+            banking_section.style.display='block';
 
         })
     })
