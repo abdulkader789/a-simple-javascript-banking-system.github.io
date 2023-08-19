@@ -8,9 +8,11 @@ const menu = document.querySelector(".mobile-menu");
 
 //Check Sign in
 let isSignedin=false;
+
 const btn_signin=document.querySelectorAll('.sign-in');
-const btn_banking=document.getElementById('banking');
-const btn_history=document.getElementById('history');
+const btn_banking=document.querySelectorAll('.banking');
+const btn_history=document.querySelectorAll('.history');
+
 const signin_section=document.getElementById('signin-section');
 const banking_section=document.getElementById('banking-section');
 const history_section=document.getElementById('history-section');
@@ -28,10 +30,8 @@ btn.addEventListener("click", () => {
 
 
 
-
-
     btn_signin.forEach((el)=>{
-        console.log(el)
+     
         el.addEventListener('click',()=>{
             isSignedin=true;
             banking_section.style.display='block';
@@ -41,38 +41,49 @@ btn.addEventListener("click", () => {
         })
     })
 
-    btn_banking.addEventListener('click',()=>{
-        if(!isSignedin){
-            alert("Plese sign in first")
-            return;
-        }
-        else{
-            banking_section.style.display='block';
-            signin_section.style.display='none';
-            history_section.style.display='none'
-        }
+    btn_banking.forEach((el)=>{
+    
+        el.addEventListener('click',()=>{
+            if(!isSignedin){
+                alert("Plese sign in first")
+                return;
+            }
+            else{
+                banking_section.style.display='block';
+                signin_section.style.display='none';
+                history_section.style.display='none'
+            }
+        })
+        
     })
-    btn_history.addEventListener('click',()=>{
-        if(!isSignedin){
-            alert("Plese sign in first")
-            return;
-        }
-        else{
-            banking_section.style.display='none';
-            signin_section.style.display='none';
-            history_section.style.display='block'
-        }
+    
+    btn_history.forEach((el)=>{
+        el.addEventListener('click',()=>{
+            if(!isSignedin){
+                alert("Plese sign in first")
+                return;
+            }
+            else{
+                banking_section.style.display='none';
+                signin_section.style.display='none';
+                history_section.style.display='block'
+            }
+        })
     })
 
 
+   
+        const digits_only = string => [...string].every(c => '0123456789'.includes(c));
 
+      
 
 
 
 function getInput(input_field){
-    let inputvalue=document.getElementById(input_field).value;
-    let num=parseFloat(inputvalue);
+    let input=document.getElementById(input_field);
+    let num=parseFloat(input.value);
     return num;
+    
 }
 function getElement(elementId){
     let element=document.getElementById(elementId).innerText;
@@ -88,10 +99,8 @@ function actionButton(input,element,balance){
     let el=getElement(element);
     let bal=getElement(balance);
     let newBal=0;
-    if(!i_value){
-        alert('Input value is empty')
-        return;
-    }
+    console.log(i_value)
+    
     if(i_value>bal && element=='withdraw'){
         alert("You don't have enough balance");
         return;
