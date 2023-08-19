@@ -5,22 +5,28 @@
 const btn = document.querySelector("button.mobile-menu-button");
 const menu = document.querySelector(".mobile-menu");
 
+
+//Check Sign in
+let isSignedin=false;
+const btn_signin=document.querySelectorAll('.sign-in');
+const btn_banking=document.getElementById('banking');
+const btn_history=document.getElementById('history');
+const signin_section=document.getElementById('signin-section');
+const banking_section=document.getElementById('banking-section');
+const history_section=document.getElementById('history-section');
+
+const deposit_btn=document.getElementById('deposit-btn');
+const withdraw_btn=document.getElementById('withdraw-btn');
+const d_input=document.getElementById('d-input');
+const w_input=document.getElementById('w-input');
+
+
 // add event listeners
 btn.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
 
-
-//Check Sign in
-let isSignedin=false;
-const btn_signin=document.querySelectorAll('.sign-in');
-console.log(btn_signin)
-const btn_banking=document.getElementById('banking');
-const btn_history=document.getElementById('history');
-const signin_section=document.getElementById('signin-section');
-const banking_section=document.getElementById('banking-section');
-const history_section=document.getElementById('history-section');
 
 
 
@@ -60,17 +66,7 @@ const history_section=document.getElementById('history-section');
 
 
 
-// const bg=['#009B77','#E9897E','#EFC050','#0072B5','#091627'];
-// const colAll= document.querySelectorAll('.col');
 
-// colAll.forEach((element,i )=> {
-//    element.style.backgroundColor=bg[i];
-// });
-
-const deposit_btn=document.getElementById('deposit-btn');
-const withdraw_btn=document.getElementById('withdraw-btn');
-const d_input=document.getElementById('d-input');
-const w_input=document.getElementById('w-input');
 
 
 function getInput(input_field){
@@ -174,90 +170,3 @@ function dateTime(){
     return date_time;
     
 }
-/*
-const pagelist=document.querySelectorAll('.page');
-const pages=document.querySelectorAll('.show-page');
-pages.forEach((el,i)=>{
-    el.style.display='none'
-})
-
-pagelist.forEach((el,i)=>{
-    el.addEventListener('click',()=>{
-        pages.forEach((el,i)=>{
-            el.style.display='none'
-        })
-        el.style.color='red';
-        pages[i].style.display='grid';
-        console.log(pages[i])
-    })
-})
-console.log(pagelist)
-*/
-// const deposit=document.getElementById('deposit');
-// const withdraw=document.getElementById('withdraw');
-// const balance=document.getElementById('balance');
-// const d_input=document.getElementById('d-input');
-// const w_input=document.getElementById('w-input');
-// const deposit_btn=document.getElementById('deposit-btn');
-// const withdraw_btn=document.getElementById('withdraw-btn');
-
-// deposit_btn.addEventListener('click',()=>{
-
-//     let d_input=getInput('d-input');
-//     let deposit=getElement('deposit');
-//     let balance=getElement('balance');
-//     let newBalance=balance+d_input;
-//     setElement('balance',newBalance);
-//     let newDeposit=deposit+d_input;
-//     setElement('deposit',newDeposit);
-// })
-
-
-
-// withdraw_btn.addEventListener('click',()=>{
-
-//     let w_input=getInput('w-input');
-//     let withdraw=getElement('withdraw');
-//     let balance=getElement('balance');
-//     let newBalance=balance-w_input;
-//     setElement('balance',newBalance);
-//     let newWithdraw=withdraw+w_input;
-//     setElement('withdraw',newWithdraw);
-// })
-
-/*
-deposit_btn.addEventListener('click',()=>{
-    const dInput_value=Number(d_input.value);
-    let deposit_num=Number(deposit.innerText);
-    let newDeposit=dInput_value+deposit_num;
-
-    const balance_num=Number(balance.innerText);
-    let newBalance=balance_num+newDeposit;
-
-    deposit.innerText=newDeposit;
-    balance.innerText=newBalance;
-    
-})
-
-withdraw_btn.addEventListener('click',()=>{
-
-    if(Number(balance.innerText)==0){
-        alert('Balance is over');
-    }
-    if(Number(w_input.value)>Number(balance.innerText)){
-        alert('Not enough balance');
-    }
-    else{
-        const wInput_value=Number(w_input.value);
-    let withdraw_num=Number(withdraw.innerText);
-    let newWithdraw=wInput_value+withdraw_num;
-
-    const balance_num=Number(balance.innerText);
-    let newBalance=balance_num-newWithdraw;
-
-    withdraw.innerText=newWithdraw;
-    balance.innerText=newBalance;
-    }
-    
-})*/
-
