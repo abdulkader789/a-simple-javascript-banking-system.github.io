@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple JS Banking System</title>
     
+  <script type="module" crossorigin src="/assets/index-ce9b196b.js"></script>
   <link rel="stylesheet" href="/assets/index-8676e87a.css">
 </head>
 <body>
@@ -35,8 +36,8 @@
   
           <!-- primary nav -->
           <div class="hidden md:flex items-center space-x-1">
-            <a href="#" id="banking" class="py-5 px-3 font-medium text-blue-700 hover:text-blue-900">Your Banking</a>
-            <a href="#" id="history" class="py-5 px-3 font-medium text-blue-700 hover:text-blue-900">Banking History</a>
+            <a href="#"  class="banking py-5 px-3 font-medium text-blue-700 hover:text-blue-900">Your Banking</a>
+            <a href="#"  class="history py-5 px-3 font-medium text-blue-700 hover:text-blue-900">Banking History</a>
           </div>
         </div>
   
@@ -66,8 +67,8 @@
   
     <!-- mobile menu -->
     <div class="mobile-menu hidden md:hidden">
-      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Your Banking</a>
-      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Banking History</a>
+      <a href="#" class="banking block py-2 px-4 text-sm hover:bg-gray-200">Your Banking</a>
+      <a href="#" class="history block py-2 px-4 text-sm hover:bg-gray-200">Banking History</a>
       <a href="#"  class="sign-in block py-2 px-4 text-sm hover:bg-gray-200">Sign in</a>
 
     </div>
@@ -92,7 +93,7 @@
 
     
 
-    <form action="#" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+    <div class="mx-auto mb-0 mt-8 max-w-md space-y-4">
       <div class="mx-auto max-w-lg text-center">
         <h1 class="text-2xl font-bold sm:text-3xl">Get started today!</h1>
 
@@ -167,14 +168,11 @@
           <span class="underline" >Sign up</span>
         </p>
 
-        <button
-          
-          class="sign-in inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-        >
+        <button class="sign-in inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
           Sign in
         </button>
       </div>
-    </form>
+    </div>
 
 
   </div>
@@ -259,6 +257,6 @@
     </div>
 </div>
 
-    <script src="/main.js"></script>
+    
 </body>
 </html>
