@@ -72,17 +72,32 @@ btn.addEventListener("click", () => {
     })
 
 
-   
-        const digits_only = string => [...string].every(c => '0123456789'.includes(c));
-
+function checkInput(inputId){
+    const digits_only = string => [...string].every(c => '0123456789'.includes(c));
+    let input=document.getElementById(inputId)
+    if(input.value.length==0){
+        return false;
+    }
+    if(input.value.length>0){
+        if(!digits_only(input.value)){
+            return false
+        }
+        else{
+            return true;
+        }
+    }
+}  
+        
       
 
 
 
 function getInput(input_field){
+    
     let input=document.getElementById(input_field);
     let num=parseFloat(input.value);
     return num;
+   
     
 }
 function getElement(elementId){
@@ -95,11 +110,13 @@ function setElement(elementId,value){
     element.innerText=value;
 }
 function actionButton(input,element,balance){
-    let i_value=getInput(input);
+  
+    let valid=checkInput(input)
+    if(valid){
+        let i_value=getInput(input);
     let el=getElement(element);
     let bal=getElement(balance);
     let newBal=0;
-    console.log(i_value)
     
     if(i_value>bal && element=='withdraw'){
         alert("You don't have enough balance");
@@ -117,6 +134,10 @@ function actionButton(input,element,balance){
 
     let newDepo=el+i_value;
     setElement(element,newDepo);
+    }else{
+        alert("Enter integer value");
+    }
+    
     
 }
 d_input.addEventListener("keypress", function(event) {
