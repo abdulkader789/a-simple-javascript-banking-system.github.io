@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "vite",
-    "build":"tailwindcss -i style.css -o ./css/style.min.css --minify"
+    "build":"vite build"
   },
   "keywords": [],
   "author": "",
