@@ -1,6 +1,6 @@
 # Simple-javascript-banking-system
 
-View project on netlify [Live link](https://simplejsbankingsite.netlify.app/)
+View project on netlify [Live link](https://abdulkader789-simplejsbankingsite.netlify.app/)
 
 This a simple javascript banking system website where you will get two functionality
 
